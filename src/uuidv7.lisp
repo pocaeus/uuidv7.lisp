@@ -25,6 +25,25 @@
 (in-package #:uuidv7)
 
 
+(alexandria:define-constant +version+ #*0111
+  :test #'equal
+  :documentation "bit vector constant for the UUID version (7 in binary)")
+(alexandria:define-constant +variant+ #*10
+  :test #'equal
+  :documentation "bit vector constant for the RFC4122 variant field")
+(alexandria:define-constant +bit-vector-length+ 128
+  :test #'equal
+  :documentation "bit vector length for UUIDv7 values in bits")
+(alexandria:define-constant +byte-vector-length+ 16
+  :test #'equal
+  :documentation "byte vector length for UUIDv7 values in bytes")
+(alexandria:define-constant +timestamp-bit-length+ 48
+  :test #'equal
+  :documentation "bit vector length for the timestamp in milliseconds")
+(alexandria:define-constant +uuidv7-string-length+ 36
+  :test #'equal
+  :documentation "length of UUIDv7 string")
+
 (defun generate ()
   "Generate and return a UUIDv7 as a byte vector (16 bytes)."
   (let ((unix-ts-ms (timestamp->bits (unix-epoch-in-ms)))
@@ -56,25 +75,7 @@
     bytes))
 
 
-;; Internal helper functions and constants (not exposed to the user).
-(alexandria:define-constant +version+ #*0111
-  :test #'equal
-  :documentation "bit vector constant for the UUID version (7 in binary)")
-(alexandria:define-constant +variant+ #*10
-  :test #'equal
-  :documentation "bit vector constant for the RFC4122 variant field")
-(alexandria:define-constant +bit-vector-length+ 128
-  :test #'equal
-  :documentation "bit vector length for UUIDv7 values in bits")
-(alexandria:define-constant +byte-vector-length+ 16
-  :test #'equal
-  :documentation "byte vector length for UUIDv7 values in bytes")
-(alexandria:define-constant +timestamp-bit-length+ 48
-  :test #'equal
-  :documentation "bit vector length for the timestamp in milliseconds")
-(alexandria:define-constant +uuidv7-string-length+ 36
-  :test #'equal
-  :documentation "length of UUIDv7 string")
+;; Internal helper functions (not exposed to the user).
 
 (defun unix-epoch-in-ms ()
   "Get the unix epoch timestamp in milliseconds"
