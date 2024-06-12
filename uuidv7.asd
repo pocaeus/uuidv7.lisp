@@ -4,11 +4,11 @@
 
 (asdf:defsystem #:uuidv7
   :description "UUIDv7 Implementation."
-  :author "Pseudomata <pseudomata@proton.me>"
+  :author "Pocæus <github@pocaeus.com>"
   :license  "MPL-2.0"
   :version "0.1.0"
-  :bug-tracker "https://github.com/pseudomata/uuidv7.lisp/issues"
-  :source-control (:git "https://github.com/pseudomata/uuidv7.lisp.git")
+  :bug-tracker "https://github.com/pocaeus/uuidv7.lisp/issues"
+  :source-control (:git "https://github.com/pocaeus/uuidv7.lisp.git")
   :name "uuidv7"
   :depends-on (#:local-time)
   :components ((:module "src"
