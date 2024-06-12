@@ -3,7 +3,7 @@
 ;;;;  file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 (asdf:defsystem #:uuidv7-test
-  :author "Pseudomata <pseudomata@proton.me>"
+  :author "Pocæus <github@pocaeus.com>"
   :license  "MPL-2.0"
   :name "uuidv7-test"
   :depends-on (#:uuidv7
